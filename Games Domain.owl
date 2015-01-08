@@ -1,0 +1,915 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <Ontology rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain">
+        <rdfs:comment>This ontology describes the following objects 
+
+Game Activities 
+
+1. Solitaire
+2 .Poker
+3. Blackjack
+4 .Soccer
+5 .Basketball
+6. Boxing
+7. MMA
+8. Monopoly
+9. Scrabble
+10. Jigsaw
+
+Non-Game Activities
+
+1. Politics
+2. Eating
+3. Reading
+4. Drinking
+5. Dancing
+</rdfs:comment>
+    </Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasActivityObject -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasActivityObject">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity_Object"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasBall -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasBall">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Ball"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasActivityObject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasBoard -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasBoard">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Board"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#BoardGame"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasActivityObject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasCard -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasCard">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Card"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#CardGame"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasActivityObject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasCompetitors -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasCompetitors">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Player"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasLocation -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasLocation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Location"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasMembers -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasMembers">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Player"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Team"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasPieces -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasPieces">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Piece"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#PuzzleGame"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasActivityObject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasPlayers -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasPlayers">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Player"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasTeam -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasTeam">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Team"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasToken -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasToken">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#BoardGame"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Token"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasActivityObject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasWinner -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasWinner">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Player"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#playersCardNumber -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#playersCardNumber">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Card"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#CardGame"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#requiresAttribute -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#requiresAttribute">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Attributes"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#numberOfActiveTeamPlayers -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#numberOfActiveTeamPlayers">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#TeamActivity"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity">
+        <rdfs:comment>A class representing an Activity</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity_Object -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity_Object">
+        <rdfs:comment>A Class to represent objects that an activity uses</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Attributes -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Attributes">
+        <rdfs:comment>A class that represents attributes of an activity</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Ball -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Ball">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity_Object"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#BasketBall -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#BasketBall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Ball"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Basketball -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Basketball">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competition"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#PhysicalSport"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#TeamActivity"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasBall"/>
+                        <someValuesFrom rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#BasketBall"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasLocation"/>
+                        <someValuesFrom rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Court"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#numberOfActiveTeamPlayers"/>
+                        <maxCardinality rdf:datatype="&xsd;nonNegativeInteger">5</maxCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Blackjack -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Blackjack">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#CardGame"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competition"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#IndividualActivity"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#playersCardNumber"/>
+                        <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Card"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</qualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Board -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Board">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity_Object"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#BoardGame -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#BoardGame">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasBoard"/>
+                        <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Board"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:comment>A class representing an Activity that requires a board</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Book -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Book">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity_Object"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Boxing -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Boxing">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competition"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#IndividualActivity"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#PhysicalSport"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasLocation"/>
+                        <someValuesFrom rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Ring"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Card -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Card">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity_Object"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#CardGame -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#CardGame">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasCard"/>
+                        <someValuesFrom rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Card"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:comment>An activity that requires cards</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competition -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competition">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasCompetitors"/>
+                        <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competitor"/>
+                        <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</minQualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasWinner"/>
+                        <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competitor"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:comment>A class that represents activities that have a winner </rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competitor -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competitor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Player"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Court -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Court">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Location"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Dancing -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Dancing">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#IndividualActivity"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasActivityObject"/>
+                        <someValuesFrom rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Music"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Dice -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Dice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity_Object"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Drink -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Drink">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity_Object"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Drinking -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Drinking">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#IndividualActivity"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasActivityObject"/>
+                        <someValuesFrom rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Drink"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#IndividualActivity"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Eating -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Eating">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#IndividualActivity"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasActivityObject"/>
+                        <someValuesFrom rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Food"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasCompetitors"/>
+                        <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competitor"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</qualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Field -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Field">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Location"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Food -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Food">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity_Object"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#IndividualActivity -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#IndividualActivity">
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasTeam"/>
+                <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Team"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</qualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+        <disjointWith rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#TeamActivity"/>
+        <rdfs:comment>A class that requires players to be individual</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Jigsaw -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Jigsaw">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#IndividualActivity"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#PuzzleGame"/>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Location -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Location">
+        <rdfs:comment>A class that represents areas an activity takes place</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#MMA -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#MMA">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competition"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#IndividualActivity"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#PhysicalSport"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasLocation"/>
+                        <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Octagon"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Mental -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Mental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Attributes"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Monoply -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Monoply">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#BoardGame"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competition"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasActivityObject"/>
+                        <someValuesFrom rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Dice"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasToken"/>
+                        <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Token"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">8</qualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Music -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Music">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity_Object"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Octagon -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Octagon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Location"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Physical -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Physical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Attributes"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#PhysicalSport -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#PhysicalSport">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#requiresAttribute"/>
+                        <someValuesFrom rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Physical"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:comment>An Activity that requires physical attributes</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Piece -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Piece">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity_Object"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Player -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Player">
+        <rdfs:comment>A class that represent the player object </rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Poker -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Poker">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#CardGame"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competition"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#IndividualActivity"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#playersCardNumber"/>
+                        <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Card"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">5</qualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Politics -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Politics">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#TeamActivity"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#requiresAttribute"/>
+                        <someValuesFrom rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Mental"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasWinner"/>
+                        <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competitor"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#PuzzleGame -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#PuzzleGame">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasPieces"/>
+                        <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Piece"/>
+                        <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</minQualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:comment>An activity that has pieces that need to be solved</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Reading -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Reading">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#IndividualActivity"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#requiresAttribute"/>
+                        <someValuesFrom rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Mental"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasActivityObject"/>
+                        <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Book"/>
+                        <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasCompetitors"/>
+                        <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competitor"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</qualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Ring -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Ring">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Location"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Scrabble -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Scrabble">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#BoardGame"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competition"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasToken"/>
+                        <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Token"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</qualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Soccer -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Soccer">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Competition"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#PhysicalSport"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#TeamActivity"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasBall"/>
+                        <someValuesFrom rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#SoccerBall"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasLocation"/>
+                        <someValuesFrom rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Field"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#numberOfActiveTeamPlayers"/>
+                        <maxCardinality rdf:datatype="&xsd;nonNegativeInteger">11</maxCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#SoccerBall -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#SoccerBall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Ball"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Solitaire -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Solitaire">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#CardGame"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#IndividualActivity"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasPlayers"/>
+                        <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Player"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Team -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Team">
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasMembers"/>
+                <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Player"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</minQualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+        <rdfs:comment>A class that groups players together for a same goal</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#TeamActivity -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#TeamActivity">
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#hasTeam"/>
+                <onClass rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Team"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</minQualifiedCardinality>
+            </Restriction>
+        </equivalentClass>
+        <rdfs:comment>A class that requries teams for an activty</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Token -->
+
+    <Class rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Token">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Activity_Object"/>
+    </Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#BoardGame"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#CardGame"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Dancing"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Drinking"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Eating"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#PhysicalSport"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Politics"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#PuzzleGame"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ter/ontologies/2014/2/Games_Domain#Reading"/>
+        </members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
